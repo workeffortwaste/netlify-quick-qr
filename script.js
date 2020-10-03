@@ -18,7 +18,6 @@ window.addEventListener('load', (event) => {
   ['click', 'popstate'].forEach(event =>
     window.addEventListener(event, function () {
       requestAnimationFrame(() => {
-        console.log(location.href)
         if (currentUrl !== location.href) {
           if (location.href.includes('overview')) { awaitUrl() }
         }
