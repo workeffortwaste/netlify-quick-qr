@@ -18,7 +18,8 @@ window.addEventListener('load', (event) => {
   ['click', 'popstate'].forEach(event =>
     window.addEventListener(event, function () {
       requestAnimationFrame(() => {
-        if (currentUrl !== location.href) {
+        // Make sure the URL has changed, and the qrcode div doesn't already exist.
+        if (currentUrl !== location.href && !document.getElementById('qrcode')) {
           if (location.href.includes('overview')) { awaitUrl() }
         }
         currentUrl = location.href
