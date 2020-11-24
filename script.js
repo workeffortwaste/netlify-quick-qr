@@ -28,8 +28,10 @@ window.addEventListener('load', (event) => {
   )
 
   // Catch drop events on Netlify Drop.
+  let awaitingDrop = false
   window.addEventListener('drop', (event) => {
-    if (currentUrl.includes('app.netlify.com/drop') || currentUrl.includes('/sites')) {
+    if ((currentUrl.includes('app.netlify.com/drop') || currentUrl.includes('/sites')) && !awaitingDrop) {
+      awaitingDrop = true
       awaitDrop()
     }
   }, true)
