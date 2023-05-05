@@ -5,7 +5,13 @@ window.addEventListener('load', (event) => {
   // Add the QR code to the dashboard.
   const applyCode = () => {
     const html = `
-    <div class="card card-hero media site-hero" style="min-width: 204px;max-width: 204px;">
+    <style>
+    /* Tidy up default netlify hero styling */
+    .layout-grid.layout-grid-hero {
+      grid-template-columns: minmax(49%, max-content) auto;
+    }
+    </style>
+    <div class="card card-hero media site-hero" style="min-width: 233px;max-width: 233px;">
         <div id="qrcode"></div>
     </div>
     `
@@ -13,8 +19,8 @@ window.addEventListener('load', (event) => {
     // eslint-disable-next-line no-new, no-undef
     new QRCode(document.getElementById('qrcode'), {
       text: document.querySelectorAll('.status.success')[0].href,
-      width: 156,
-      height: 156
+      width: 183,
+      height: 183
     })
   }
 
