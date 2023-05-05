@@ -2,6 +2,22 @@ window.addEventListener('load', (event) => {
   // Get the current location of the SPA.
   let currentUrl = location.href
 
+  // Add the QR code to the dashboard.
+  const applyCode = () => {
+    const html = `
+    <div class="card card-hero media site-hero" style="min-width: 204px;max-width: 204px;">
+        <div id="qrcode"></div>
+    </div>
+    `
+    document.querySelector('.layout-grid-hero').insertAdjacentHTML('beforeend', html)
+    // eslint-disable-next-line no-new, no-undef
+    new QRCode(document.getElementById('qrcode'), {
+      text: document.querySelectorAll('.status.success')[0].href,
+      width: 156,
+      height: 156
+    })
+  }
+
   // Wait for a project to be deployed before generating a QR code.
   const awaitUrl = () => {
     if (!document.querySelectorAll('.status.success').length) {
@@ -43,21 +59,5 @@ window.addEventListener('load', (event) => {
     } else {
       awaitUrl()
     }
-  }
-
-  // Add the QR code to the dashboard.
-  const applyCode = () => {
-    const html = `
-    <div class="card card-hero media site-hero" style="min-width: 204px;max-width: 204px;">
-        <div id="qrcode"></div>
-    </div>
-    `
-    document.querySelector('.layout-grid-hero').insertAdjacentHTML('beforeend', html)
-    // eslint-disable-next-line no-new, no-undef
-    new QRCode(document.getElementById('qrcode'), {
-      text: document.querySelectorAll('.status.success')[0].href,
-      width: 156,
-      height: 156
-    })
   }
 })
