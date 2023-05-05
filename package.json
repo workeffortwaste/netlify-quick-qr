@@ -1,0 +1,27 @@
+{
+  "name": "netlify-quick-qr",
+  "version": "0.2.0",
+  "description": "",
+  "main": "qrcode.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workeffortwaste/netlify-quick-qr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/workeffortwaste/netlify-quick-qr/issues"
+  },
+  "homepage": "https://github.com/workeffortwaste/netlify-quick-qr#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
