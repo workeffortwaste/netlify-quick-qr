@@ -53,6 +53,7 @@ window.addEventListener('load', (event) => {
     </div>
     `
     document.querySelector('.layout-grid-hero').insertAdjacentHTML('beforeend', html)
+    // eslint-disable-next-line no-new, no-undef
     new QRCode(document.getElementById('qrcode'), {
       text: document.querySelectorAll('.status.success')[0].href,
       width: 156,
